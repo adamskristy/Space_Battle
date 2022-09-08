@@ -28,12 +28,16 @@ class Ship {
             if (Math.random() < this.accuracy) {
                 enemy.hull -= this.firepower
                 console.log('Direct Hit!')
+                console.log(`Enemy Hull ${alienShipOne.hull}`)
             } else {
                 console.log('Enemy evaded!')
             } if (enemy.hull <= 0 ){
                 this.defeatShip()
             }
         }
+    }
+    checkStats(){
+
     }
 }
 
@@ -68,6 +72,7 @@ class alienShip extends Ship {
             if (Math.random() < this.accuracy) {
                 enemy.hull -= this.firepower
                 console.log('You have been hit!')
+                console.log(`Enemy Hull ${USSHW.hull}`)
             } else {
                 console.log('That was a close call')
             } if (enemy.hull <= 0 ){
@@ -141,28 +146,38 @@ const createAlienArray = function(numShips) {
 //creating new alien array with 6 ships
 const alienArray = createAlienArray(6);
 
+// console.log(alienArray[0])
+// //{hull: 0, firepower: 1, accuracy: 0}
+// console.log(alienArray[1])
+// //{hull: 1, firepower: 0, accuracy: 0.1}
+// console.log(alienArray[2])
+// //{hull: 2, firepower: 1, accuracy: 0.1}
+// console.log(alienArray[3])
+// //{hull: 2, firepower: 0, accuracy: 0.1}
+// console.log(alienArray[4])
+// //{hull: 1, firepower: 0, accuracy: 0}
+// console.log(alienArray[5])
+// //{hull: 2, firepower: 0, accuracy: 0}
+
 //creating player ship
 const USSHW = new playerShip (20, 5, .7)
 
 
-// initial prompt when starting game for the first time
+// start game prompt
 setTimeout(() => {
     let startMessage = window.confirm('The fate of Earth is in your hands. Are you ready?');
     if (startMessage) {
         startGame()
     }
-}, '3000');
+}, '5000');
 
-// function for the game logic
-function startGame () {
-    confirm('Enemy ship spotted!')
-    
+// function for starting the game
+function startGame () {    
     // start battle function
-    if (confirm('Do you want to attack?')) {
+    if (confirm('Prepare for battle')) {
         gameOn()
     }
-
-    // else when player runs from fight
+    // else when player cancels
     else {
         confirm('Mission Failed')
     }
@@ -175,7 +190,8 @@ let gameOver = false;
 function gameOn(){
     while(gameOver == false){
         USSHW.shoot() //player shoots
-        if(alienArray.length > 0){
+        //insert prompt that tells if alien alive or dead
+        if(alienArray.length > 0){ //if alien array is more than zero
             alienArray[0].shoot() // first alien shoots?
         } else if (gameOver == true) {
             //determine which gameOver
@@ -194,6 +210,9 @@ function gameOn(){
 //prompt with information
     //whether alien survived or died
 //click prompt to either shoot alien, be shot, or leave game
+
+//add function to check stats?
+//function needs to pull alien out of array and have that alien shoot
 
 
 
