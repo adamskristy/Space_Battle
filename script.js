@@ -25,14 +25,26 @@ function randomInt(min, max) { // min and max included
       }
     return arr;
     }
-  let alienArray = createAlienArray(6)
-
+  
+    let alienArray = createAlienArray(6)
+  
+  
+  console.log(alienArray[0])
+  console.log(alienArray[1])
+  console.log(alienArray[2])
+  console.log(alienArray[3])
+  console.log(alienArray[4])
+  console.log(alienArray[5])
 
   //player attack function
 function playerAttack(enemy) {
+    let random = Math.random()
+    console.log(random)
             if (Math.random() < this.accuracy) {    //if the player attacks and alien dies so we shift first ship from the alienarray and move on to the next ship
                 enemy.hull -= this.firepower
                 checkAlienStats(enemy)
+
+                if(enemy.hull <= 0){
                 setTimeout(() => {
                     alert('You defeated the enemy')
                         alienArray.shift()
@@ -45,21 +57,25 @@ function playerAttack(enemy) {
             // } if (enemy.hull <= 0 ){
             //     enemy.isDefeated = true;
             // }
-            }else{  
-                alert('Direct hit on enemy!')                 ///if the alien still survives then thet attack the player
-                alienAttack(enemy)
-                }
-                                          ///if we dont hit the alien at all and miss the shot completly they attack us
-            else {
+            }   
+                else{  
+                    alert('Direct hit on enemy!')                 ///if the alien still survives then thet attack the player
+                    alienAttack(enemy)
+                    }
+                                            ///if we dont hit the alien at all and miss the shot completly they attack us
+            }else {
                 alert('Enemy evaded. Brace for impact')
                 alienAttack(enemy)
         }
     }
+
 //alien attack function
 function alienAttack(enemy) {
     if (Math.random() < this.accuracy) {
         enemy.hull -= this.firepower
         checkPlayerStats()
+        
+        if(enemy.hull <= 0){
 
         setTimeout(() => {
             alert('Your ship has been destroyed! Game Over')
@@ -69,12 +85,13 @@ function alienAttack(enemy) {
         } 
         else {
             alert('You have been hit! USSHW Hull: ' + enemy.hull)
-        } 
-        else {
-            alert('Enemy missed! Prepare to fire!')
-            playerAttack(enemy)
         }
+    } 
+    else {
+        alert('Enemy missed! Prepare to fire!')
+        playerAttack(enemy)
     }
+}
 
 //creating player ship
 const USSHW = new Ship (20, 5, .7)
@@ -89,8 +106,8 @@ const alienShipOne = new Ship (6, 4, .8)
 
 // give html time to load
 setTimeout(() => {
-    let startMessage = window.confirm('The fate of Earth is in your hands. Are you ready?');
-    if (startMessage) {
+     
+    if (confirm('The fate of Earth is in your hands. Are you ready?')) {
         startGame()
     }
 }, '3000');
@@ -107,8 +124,6 @@ function startGame () {
         confirm('Mission Failed')
     }
 }
-
-
 
 function battle(enemy){ // in both battle and new battle functions player attacks the enemy
     playerAttack(alienArray[0])   
