@@ -22,6 +22,11 @@ class Ship {
             }
         }
     }
+    checkStats(){
+        if(enemy){
+            //comeback to this
+        }
+    }
 }
 
 class playerShip extends Ship {
@@ -97,7 +102,6 @@ function startGame () {
     }
 }
 
-
 //ending conditions: player dies, alien dies, retreat
 let gameOver = false; 
 
@@ -133,8 +137,7 @@ function gameOn(){
     //whether alien survived or died
 //click prompt to either shoot alien, be shot, or leave game
 
-//add function to check stats?
 //function needs to pull alien out of array and have that alien shoot
-
-
-
+//function to start game
+//functiont to shoot
+//function to check stats

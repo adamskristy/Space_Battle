@@ -1,0 +1,70 @@
+///////////////////////////////////////////////////
+//start game function
+//battle function
+//new battle function (retreat in new battle)
+    //how many enemies left
+    //shift when enemy defeated (go into new battle)
+    //if some left update enemy numbers
+//player attack
+//enemy attack 
+//update enemy function --settimout --update to html
+//update self function --settimout -- update html
+
+//set invader to zero if less than or equal to zero
+///////////////////////////////////////////
+
+// update the stats on index page
+
+// have a timeout function with a confirm statement to start the game
+
+
+//battle function
+    //attack first enemy
+    
+// new battle function
+    //checking if aliens still array
+    if so shifting from the front 
+// attack function
+// enemy attack function
+//update enemy function
+//update self function
+
+//create confirms/alerts with set timeouts when html needs to update
+
+//create ways that the functions can bounce off each other (if/else statements)
+
+/////////////////////////////////////
+why not have shoot method inside ship class?
+
+
+
+///////////////////////////////////////////////////
+//start game function
+//battle function
+//new battle function (retreat in new battle)
+    //how many enemies left
+    //shift when enemy defeated (go into new battle)
+    //if some left update enemy numbers
+//player attack
+//enemy attack 
+//update enemy function --settimout --update to html
+//update self function --settimout -- update html
+
+//set invader to zero if less than or equal to zero
+///////////////////////////////////////////
+
+// update the stats on index page
+
+// have a timeout function with a confirm statement to start the game
+
+
+//battle function
+// new battle function
+// attack function
+// enemy attack function
+//update enemy function
+//update self function
+
+//create confirms/alerts with set timeouts when html needs to update
+
+//create ways that the functions can bounce off each other (if/else statements)
