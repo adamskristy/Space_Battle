@@ -108,7 +108,7 @@ function continueBattle(){
             if (confirm('More enemies are on the way. Do you want to continue attacking?')){
                 battle(alienArray)
             }else {
-                confirm('Mission failed. There is no one left to defend the Earth!')
+                alert('Mission failed. There is no one left to defend the Earth!')
             }
         }, '1000')
     }else {
