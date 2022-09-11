@@ -6,7 +6,7 @@ There are six alien ships. The aliens' weakness is that they are too logical and
 they will wait to see the outcome of a battle before deploying another alien ship. Your strength is that you have the initiative and get to attack first. 
 However, you do not have targeting lasers and can only attack the aliens in order. After you have destroyed a ship, you have the option to make a hasty retreat.
 
-###A game round would look like this:
+### A game round would look like this:
 
 *You attack the first alien ship
 *If the ship survives, it attacks you
@@ -18,7 +18,7 @@ However, you do not have targeting lasers and can only attack the aliens in orde
 *You lose the game if you are destroyed
 
 
-###Ship Properties
+### Ship Properties
 * **hull** is the same as hitpoints. If hull reaches 0 or less, the ship is destroyed
 * **firepower** is the amount of damage done to the **hull** of the target with a successful hit
 * **accuracy** is the chance between 0 and 1 that the ship will hit its target
