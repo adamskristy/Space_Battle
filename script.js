@@ -157,6 +157,6 @@ function startGame() {
     }
     // else when player cancels
     else {
-        confirm('You have doomed the Earth! Oh no! we will be invaded by aliens now!')
+        alert('You have doomed the Earth! Oh no! we will be invaded by aliens now!')
     }
 }
