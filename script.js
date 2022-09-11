@@ -6,10 +6,12 @@ class Ship {
         isDefeated: false;
     }
 }
+
 //function to randomise the numbers
 function randomInt(min, max) { // min and max included
     return Math.floor(Math.random() * (max - min + 1) + min)
   }
+
 //function to create alien ships with random properties
   function createAlienShip() {
     let hull = randomInt(3, 6)
@@ -17,6 +19,7 @@ function randomInt(min, max) { // min and max included
     let accuracy = (randomInt(6, 8)) / 10
     return new Ship(hull, firepower, accuracy)
     }
+
 //creating alienarray
   function createAlienArray(numShips) {
     let arr = []
@@ -25,8 +28,10 @@ function randomInt(min, max) { // min and max included
       }
     return arr;
     }
+
 //creating 6 alien ships
   let alienArray = createAlienArray(6)
+
   //player attacking enemy(alienArray[0]) function
 function playerAttack(enemy) {
             if (Math.random() < USSHW.accuracy) {    //if the player attacks and alien dies so we shift first ship from the alienarray and move on to the next ship
@@ -57,6 +62,7 @@ function playerAttack(enemy) {
                 console.log('You missed! Enemy evaded. Brace for impact')
             }
     }
+
 //alien attack function
 function alienAttack(hero) {
     if (Math.random() < hero.accuracy) {
@@ -88,11 +94,13 @@ function alienAttack(hero) {
         console.log('Enemy missed you! Prepare to fire!')
     }
 }
+
 //creating player ship
 const USSHW = new Ship (20, 5, .7)
 function battle(alienArray){ // in both battle and new battle functions player attacks the enemy
     playerAttack(alienArray[0])
 }
+
 function continueBattle(){
     if(alienArray.length != 0){
         checkAlienStats(alienArray[0])
@@ -107,21 +115,26 @@ function continueBattle(){
         alert('You defeated all the alienships! You win!')   //to do: give the user another chance to play again???
     }
 }
+
 //how to end the game
 if (alienArray.length === 0 ){
     //gameover
     console.log('Mission Complete! Thanks for saving the Earth!')
 }
+
 let playerStats = document.querySelector(".playerStats")
 let enemyStats = document.querySelector(".enemyStats")
+
 //function to check player stats and update the DOM
 function checkPlayerStats(){
     playerStats.innerHTML = `Hull: ${USSHW.hull}<br>Firepower: ${USSHW.firepower}<br>Accuracy: ${USSHW.accuracy}`
 }
+
 //function to check enemy stats and update the DOM
 function checkAlienStats(enemy){
     enemyStats.innerHTML = `Hull: ${enemy.hull}<br>Firepower: ${enemy.firepower}<br>Accuracy: ${enemy.accuracy}`
 }
+
 ///////////////////////////
 //// Game Starts here///////
 // give html time to load
@@ -129,8 +142,13 @@ setTimeout(() => {
     let startMessage = window.confirm('Earth has been attacked by a horde of aliens! You are the captain of the USS HelloWorld, on a mission to destroy every last alien ship.');
     if (startMessage) {
         startGame()
+    }else {
+        alert('You have doomed the Earth! Oh no! we will be invaded by aliens now!')
     }
+    
 }, '1000');
+
+
 // function for starting the game
 function startGame() {
     // start battle function
